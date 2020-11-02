@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 
-import './Infor.css';
+import './InforBar.css';
 
-
-
-const InfoBar = () => {
+const InfoBar = ({ room }) => {
 
     return (
         <div className="inforBar">
             <div className="inforBar-inner">
+                <FiberManualRecordIcon style={{ color: 'green' }} />
+                <h3>{room}</h3>
 
             </div>
             <div className="InforBar-rightContainer">
-                <a href="/"></a>
+                <a href="/"><ExitToAppIcon /></a>
             </div>
 
         </div>
