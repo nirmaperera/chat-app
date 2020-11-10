@@ -13,9 +13,7 @@ const Join = () => {
         <div className="joinOuter_Containter">
             <div className="bubbles-left ">
                 <img className="blue-bubble floating" src={blueBubble}></img>
-
                 <img className="green-bubble floating delay" src={greenBubble}></img>
-
             </div>
 
             <div className="joinInner_Container">
@@ -28,8 +26,9 @@ const Join = () => {
                 </Link>
             </div>
 
-            <div className="bubbles-top floating delay">
-                <img className="blue-bubble" src={blueBubble}></img>
+            <div className="bubbles-top">
+                <img className="blue-bubble floating" src={blueBubble}></img>
+                <img className="green-bubble-2 floating delay" src={greenBubble}></img>
             </div>
 
             <div className="bubbles-bottom floating">
@@ -40,8 +39,6 @@ const Join = () => {
                 <img className="blue-bubble floating " src={blueBubble}></img>
                 <img className="green-bubble floating delay" src={greenBubble}></img>
             </div>
-
-
         </div >
     )
 
