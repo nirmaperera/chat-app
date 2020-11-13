@@ -16,7 +16,7 @@
     outline: none;
   }
 
-  input::placeholder{
+  .message_input::placeholder{
     font-style: italic;
 
   }
