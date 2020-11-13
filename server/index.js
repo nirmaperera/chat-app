@@ -35,8 +35,10 @@ io.on('connection', (socket) => { // a new connection
     //user messages waiting on sendMessages from frontend
     socket.on('sendMessage', (message, callback) => {
         const user = getUser(socket.id);
+        const date = new Date().toLocaleTimeString();
+        date
 
-        io.to(user.room).emit('message', { user: user.name, text: message });
+        io.to(user.room).emit('message', { user: user.name, text: message, time: date });
 
         callback();// do something after the message is send on the fronten
     });

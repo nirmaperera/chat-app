@@ -4,7 +4,7 @@
     padding: 5px 20px;
     color: white;
     display: inline-block;
-    max-width: 80%;
+    max-width: 100%;
   }
 
   .message__Text {
@@ -22,7 +22,7 @@
   .message__Container {
     display: flex;
     justify-content: flex-end;
-    padding: 0 5%;
+    padding: 0 2%;
     margin-top: 3px;
   }
 
@@ -33,6 +33,12 @@
     color: #828282;
     letter-spacing: 0.3px;
   }
+  .sent__Time{
+    display: flex;
+    justify-content: center;
+    color: #828282;
+    font-size: 10px;
+  }
 
   .pl-10 {
     padding-left: 10px;
@@ -42,11 +48,11 @@
     padding-right: 10px;
   }
 
-  .justify__Start {
+  .justify__start {
     justify-content: flex-start;
   }
 
-  .justify__End {
+  .justify__end {
     justify-content: flex-end;
   }
 

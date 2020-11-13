@@ -16,6 +16,10 @@
     outline: none;
   }
 
+  input::placeholder{
+    font-style: italic;
+
+  }
   .sendButton {
     color: #fff !important;
     text-transform: uppercase;

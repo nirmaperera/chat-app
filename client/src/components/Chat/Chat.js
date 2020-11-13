@@ -57,7 +57,7 @@ const Chat = ({ location }) => {
 
     return (
         <div className="outerContainer">
-            <TextContainer users={users} name={name} />
+            <TextContainer users={users} name={name} room={room} />
             <div className="message__container">
                 <image src={dots} />
                 <div className="container">

@@ -10,7 +10,7 @@ const InfoBar = ({ room }) => {
     return (
         <div className="inforBar">
             <div className="inforBar-inner">
-                <FiberManualRecordIcon style={{ color: 'green' }} />
+                <FiberManualRecordIcon className="blink" style={{ color: '#ACD957' }} />
                 <h3>{room}</h3>
 
             </div>

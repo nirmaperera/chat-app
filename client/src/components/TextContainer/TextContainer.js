@@ -1,9 +1,11 @@
 import React from 'react';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import './TextContainer.css';
-import { useScrollTo } from 'react-scroll-to-bottom';
+import logo from '../../images/logo.png';
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
 
-const TextContainer = ({ users, name }) => {
+const TextContainer = ({ users, name, room }) => {
     console.log(users, 'users', name, "name");
     return (
         <div className="textContainer">
@@ -11,13 +13,17 @@ const TextContainer = ({ users, name }) => {
                 users
                     ? (
                         <div>
-                            <h1>People currently chatting:</h1>
+                            <img src={logo} width="75px"></img>
+                            <h2 className="meeting__room"><MeetingRoomIcon /> Room: {room}</h2>
+                            <h2 style={{
+                                marginLeft: "5%", marginBottom: "0"
+                            }}><PeopleAltIcon /> Online users:</h2>
                             <div className="activeContainer">
                                 <h2>
                                     {users.map(({ name }) => (
                                         <div key={name} className="activeItem">
                                             {name}
-                                            <FiberManualRecordIcon />
+                                            <FiberManualRecordIcon style={{ color: '#ACD957' }} />
                                         </div>
                                     ))}
                                 </h2>
