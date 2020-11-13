@@ -1,14 +1,17 @@
+// helper functions
 const users = [];
 
 const addUser = ({ id, name, room }) => {
     name = name.trim().toLowerCase();
     room = room.trim().toLowerCase();
 
+    //check for existing user
     const existingUser = users.find((user) => user.room === room && user.name === name);
 
     if (!name || !room) return { error: 'Username and room are required.' };
     if (existingUser) return { error: 'Username is taken.' };
 
+    //create user object
     const user = { id, name, room };
 
     users.push(user);

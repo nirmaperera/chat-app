@@ -1,14 +1,15 @@
 .form {
     display: flex;
     border-top: 2px solid #D3D3D3;
+    height: 60px;
   }
 
   .message_input {
     border: none;
     border-radius: 0;
-    padding: 5%;
-    width: 80%;
+    width: 100%;
     font-size: 1.2em;
+    border-radius: 0 0px 5px 5px;
   }
 
   input:focus, textarea:focus, select:focus{
@@ -19,9 +20,10 @@
     color: #fff !important;
     text-transform: uppercase;
     text-decoration: none;
-    background: #2979FF;
+    background: #0ba0c0;
     padding: 20px;
     display: inline-block;
     border: none;
     width: 20%;
+    border-radius: 0 0px 5px 5px;
   }

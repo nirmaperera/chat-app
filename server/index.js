@@ -14,30 +14,34 @@ const io = socketio(server);
 app.use(cors());
 app.use(router);
 
-io.on('connect', (socket) => {
+io.on('connection', (socket) => { // a new connection
     socket.on('join', ({ name, room }, callback) => {
         const { error, user } = addUser({ id: socket.id, name, room });
 
-        if (error) return callback(error);
+        if (error) return callback(error); //if there errors then the function will stop
 
         socket.join(user.room);
 
+        //admin messages
+        //broadcast send the message to everyone except for the socket user.
         socket.emit('message', { user: 'admin', text: `${user.name}, welcome to room ${user.room}.` });
         socket.broadcast.to(user.room).emit('message', { user: 'admin', text: `${user.name} has joined!` });
 
         io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
 
-        callback();
+        callback(); // trigger a response after the socket is emitted, error handling
     });
 
+    //user messages waiting on sendMessages from frontend
     socket.on('sendMessage', (message, callback) => {
         const user = getUser(socket.id);
 
         io.to(user.room).emit('message', { user: user.name, text: message });
 
-        callback();
+        callback();// do something after the message is send on the fronten
     });
 
+    //specific socket that will be disconnected when user leaves the application
     socket.on('disconnect', () => {
         const user = removeUser(socket.id);
 

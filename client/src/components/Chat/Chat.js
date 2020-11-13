@@ -2,12 +2,17 @@ import React, { useEffect, useState } from 'react';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 
-import './Chat.css';
+
 import InfoBar from '../InforBar/InforBar';
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 import TextContainer from '../TextContainer/TextContainer';
+import dots from '../../images/dots.png';
 
+import './Chat.css';
+
+//const ENDPOINT = 'https://chat-application23.herokuapp.com/'
+const ENDPOINT = 'localhost:5000';
 let socket;
 
 const Chat = ({ location }) => {
@@ -16,69 +21,54 @@ const Chat = ({ location }) => {
     const [users, setUsers] = useState('');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
-    const ENDPOINT = 'https://chat-application23.herokuapp.com/'
-
-
-
 
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
-        console.log(name, room);
+
         socket = io(ENDPOINT);
 
-        setName(name);
         setRoom(room);
+        setName(name)
 
-        socket.emit('join', { name, room }, () => {
+        socket.emit('join', { name, room }, (error) => {
+            if (error) {
+                alert(error);
+            }
+        });
+    }, [ENDPOINT, location.search]);
 
+    useEffect(() => {
+        socket.on('message', message => {
+            setMessages(messages => [...messages, message]);
         });
 
-        return () => {
-            socket.emit('disconnect') //leaving the chat room
-            socket.off();
-        }
-
-    }, [ENDPOINT, location.search])
-
-    //handle messages
-    useEffect(() => {
-        socket.on('message', (message) => {
-            setMessages([...messages, message]);
-
-        })
         socket.on("roomData", ({ users }) => {
             setUsers(users);
         });
-    }, [])
+    }, []);
 
-    //function for sending messages
-    const sendMessage = (e) => {
-        e.preventDefault();
+    const sendMessage = (event) => {
+        event.preventDefault();
 
         if (message) {
-            socket.emit('sendMessage', message, () => setMessage(''))
+            socket.emit('sendMessage', message, () => setMessage(''));
         }
-
     }
-
-
-
-    console.log(message, messages);
 
     return (
         <div className="outerContainer">
-            <div className="container">
-                <InfoBar room={room} />
-                <Messages messages={messages} name={name} />
-                <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
-
-
+            <TextContainer users={users} name={name} />
+            <div className="message__container">
+                <image src={dots} />
+                <div className="container">
+                    <InfoBar room={room} />
+                    <Messages messages={messages} name={name} />
+                    <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+                </div>
             </div>
-            <TextContainer users={users} />
+
         </div>
-    )
-
-
+    );
 }
 
 export default Chat;

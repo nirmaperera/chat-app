@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 

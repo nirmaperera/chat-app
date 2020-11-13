@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import blueBubble from '../../images/circle-b.png'
 import greenBubble from '../../images/circle-g.png'
