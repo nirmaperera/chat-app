@@ -16,7 +16,7 @@ const TextContainer = ({ users, name, room }) => {
                             <img src={logo} width="75px"></img>
                             <h2 className="meeting__room"><MeetingRoomIcon /> Room: {room}</h2>
                             <h2 style={{
-                                marginLeft: "5%", marginBottom: "0"
+                                marginLeft: "5%", marginBottom: "0", fontWeight: "200"
                             }}><PeopleAltIcon /> Online users:</h2>
                             <div className="activeContainer">
                                 <h2>

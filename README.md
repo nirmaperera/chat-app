@@ -1,6 +1,9 @@
 # Telechat :speech_balloon:
 Real time chat application made with React, Node, Express, Socket.io
 
+## Live Demo:
+    https://telechat.netlify.app
+
 ## Available Scripts
 
 In the project directory, you can start the client by :
@@ -18,6 +21,6 @@ In the project directory, you can run the server by :
 Runs the app in the development mode.\
 Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
-Status: In Progress\
+Status: In Progress
 
 Illustrations by freellustrations.com

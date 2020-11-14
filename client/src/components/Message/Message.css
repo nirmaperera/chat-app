@@ -67,7 +67,7 @@
   .background__Blue {
 
     background: rgb(34,193,195);
-    background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(24,55,122,1) 100%);}
+    background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(24,55,122,1)  220%);}
 
   .background__Light {
     background: #F3F3F3;

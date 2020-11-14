@@ -4,6 +4,7 @@ import io from 'socket.io-client';
 
 
 import InfoBar from '../InforBar/InforBar';
+
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 import TextContainer from '../TextContainer/TextContainer';
@@ -21,6 +22,7 @@ const Chat = ({ location }) => {
     const [users, setUsers] = useState('');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
+    const [image, setImage] = useState("");
 
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
@@ -49,11 +51,25 @@ const Chat = ({ location }) => {
 
     const sendMessage = (event) => {
         event.preventDefault();
+        console.log(message, 'MESSAGES')
 
         if (message) {
             socket.emit('sendMessage', message, () => setMessage(''));
         }
     }
+
+    // const onImageChange = (event) => {
+    //     if (event.target.files && event.target.files[0]) {
+    //         let reader = new FileReader();
+    //         reader.onload = (e) => {
+    //             setImage(e.target.result)
+    //             setMessage(e.target.result);
+    //         };
+    //         reader.readAsDataURL(event.target.files[0]);
+    //     }
+
+
+    // }
 
     return (
         <div className="outerContainer">
@@ -63,6 +79,11 @@ const Chat = ({ location }) => {
                 <div className="container">
                     <InfoBar room={room} />
                     <Messages messages={messages} name={name} />
+                    {/* <input
+                        className="message_input"
+                        type="file"
+                        onChange={onImageChange}
+                    /> */}
                     <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
                 </div>
             </div>
