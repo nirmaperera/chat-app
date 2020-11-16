@@ -4,6 +4,7 @@ import io from 'socket.io-client';
 
 
 import InfoBar from '../InforBar/InforBar';
+import Gif from '../gifSearch/gif';
 
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
@@ -11,6 +12,7 @@ import TextContainer from '../TextContainer/TextContainer';
 import dots from '../../images/dots.png';
 
 import './Chat.css';
+import InputMenu from '../InputMenu/InputMenu';
 
 //const ENDPOINT = 'https://chat-application23.herokuapp.com/'
 const ENDPOINT = 'localhost:5000';
@@ -58,18 +60,16 @@ const Chat = ({ location }) => {
         }
     }
 
-    // const onImageChange = (event) => {
-    //     if (event.target.files && event.target.files[0]) {
-    //         let reader = new FileReader();
-    //         reader.onload = (e) => {
-    //             setImage(e.target.result)
-    //             setMessage(e.target.result);
-    //         };
-    //         reader.readAsDataURL(event.target.files[0]);
-    //     }
-
-
-    // }
+    const onImageChange = (event) => {
+        if (event.target.files && event.target.files[0]) {
+            let reader = new FileReader();
+            reader.onload = (e) => {
+                setImage(e.target.result)
+                setMessage(e.target.result);
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    }
 
     return (
         <div className="outerContainer">
@@ -83,7 +83,10 @@ const Chat = ({ location }) => {
                         className="message_input"
                         type="file"
                         onChange={onImageChange}
-                    /> */}
+                    />
+                    <Gif setMessage={setMessage} /> */}
+
+                    <InputMenu setMessage={setMessage} />
                     <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
                 </div>
             </div>

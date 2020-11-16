@@ -9,14 +9,16 @@ const Message = ({ message: { user, text, time }, name }) => {
     if (user === trimName) {
         isSentByCurrentUser = true
     }
+    console.log(text, 'TEXT');
     return (
-
         isSentByCurrentUser ? (
             <div className="message__Container fadeIn justify__end">
                 <p className="sent__Text pr-10">{trimName}</p>
                 <div className="message__BoxContainer">
                     <div className="message__Box background__Blue">
-                        <p className="message__Text color__white">{ReactEmoji.emojify(text)}</p>
+                        {text.includes("data:image") ? <img width="400px" src={text} />
+                            : text.includes("giphy.com/media") ? <img width="300px" src={text} />
+                                : <p className="message__Text color__white">{ReactEmoji.emojify(text)}</p>}
                     </div>
                     <p className="sent__Time pr-10 justify__end">{time}</p>
                 </div>
@@ -26,7 +28,9 @@ const Message = ({ message: { user, text, time }, name }) => {
                 <div className="message__Container fadeIn justify__start">
                     <div className="message__BoxContainer">
                         <div className="message__Box">
-                            <p className="message__Text color__Dark ">{ReactEmoji.emojify(text)}</p>
+                            {text.includes("data:image") ? <img width="400px" src={text} />
+                                : text.includes("giphy.com/media") ? <img width="400px" src={text} />
+                                    : <p className="message__Text color__Dark">{ReactEmoji.emojify(text)}</p>}
 
                         </div>
                         <p className="sent__Time pr-10 justify__start">{time}</p>

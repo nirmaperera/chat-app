@@ -1,0 +1,31 @@
+.inputMenu__container{
+    background-color: lightgray;
+}
+
+.inputMenu{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.Icon{
+    font-size: 3rem !important;
+    background-color: #088099;
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+    margin-right: 20px;
+    cursor: pointer;
+    border: 1px solid #ACD957;
+}
+.Icon:hover{
+    background-color: #0990AC;
+}
+
+.close{
+    color:#0ba0c0;
+    cursor: pointer;
+}
