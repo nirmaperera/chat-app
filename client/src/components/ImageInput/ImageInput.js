@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-
-
+import './ImageInput.css';
 
 const ImageInput = ({ setMessage, setClickImg }) => {
     const [image, setImage] = useState("");
@@ -20,8 +19,9 @@ const ImageInput = ({ setMessage, setClickImg }) => {
     return (
         <div>
             <input
-                className="message_input"
+                className="image_input"
                 type="file"
+                accept="image/*"
                 onChange={onImageChange}
             />
         </div>

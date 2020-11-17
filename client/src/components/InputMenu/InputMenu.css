@@ -1,11 +1,12 @@
 .inputMenu__container{
-    background-color: lightgray;
+    background: #E8E8E8;
 }
 
 .inputMenu{
+    background: #E8E8E8;
     display: flex;
     width: 100%;
-    align-items: center;
+    margin-top:10px;
     justify-content: space-between;
     padding-left: 10px;
     padding-right: 10px;
@@ -19,7 +20,7 @@
     color: white;
     margin-right: 20px;
     cursor: pointer;
-    border: 1px solid #ACD957;
+    border: 2px solid #ACD957;
 }
 .Icon:hover{
     background-color: #0990AC;

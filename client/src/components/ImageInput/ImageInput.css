@@ -1,0 +1,19 @@
+.image_input::-webkit-file-upload-button {
+    background-color:#0990AC;
+    border:none;
+    outline:none;
+    color:white;
+    padding:5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    border-radius:10px;
+    cursor: pointer;
+}
+
+.image_input{
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    font-size: 1.2em;
+    border-radius: 0 0px 5px 5px;
+}

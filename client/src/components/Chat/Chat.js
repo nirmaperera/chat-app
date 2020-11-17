@@ -2,9 +2,7 @@ import React, { useEffect, useState } from 'react';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 
-
 import InfoBar from '../InforBar/InforBar';
-import Gif from '../gifSearch/gif';
 
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
@@ -24,7 +22,6 @@ const Chat = ({ location }) => {
     const [users, setUsers] = useState('');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
-    const [image, setImage] = useState("");
 
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
@@ -60,17 +57,6 @@ const Chat = ({ location }) => {
         }
     }
 
-    const onImageChange = (event) => {
-        if (event.target.files && event.target.files[0]) {
-            let reader = new FileReader();
-            reader.onload = (e) => {
-                setImage(e.target.result)
-                setMessage(e.target.result);
-            };
-            reader.readAsDataURL(event.target.files[0]);
-        }
-    }
-
     return (
         <div className="outerContainer">
             <TextContainer users={users} name={name} room={room} />
@@ -79,13 +65,6 @@ const Chat = ({ location }) => {
                 <div className="container">
                     <InfoBar room={room} />
                     <Messages messages={messages} name={name} />
-                    {/* <input
-                        className="message_input"
-                        type="file"
-                        onChange={onImageChange}
-                    />
-                    <Gif setMessage={setMessage} /> */}
-
                     <InputMenu setMessage={setMessage} />
                     <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
                 </div>

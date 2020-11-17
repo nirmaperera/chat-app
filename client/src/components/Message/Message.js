@@ -29,7 +29,7 @@ const Message = ({ message: { user, text, time }, name }) => {
                     <div className="message__BoxContainer">
                         <div className="message__Box">
                             {text.includes("data:image") ? <img width="400px" src={text} />
-                                : text.includes("giphy.com/media") ? <img width="400px" src={text} />
+                                : text.includes("giphy.com/media") ? <img width="300px" src={text} />
                                     : <p className="message__Text color__Dark">{ReactEmoji.emojify(text)}</p>}
 
                         </div>
