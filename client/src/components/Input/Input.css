@@ -33,5 +33,6 @@
     display: inline-block;
     border: none;
     width: 20%;
+    cursor: pointer;
     border-radius: 0 0px 5px 5px;
   }

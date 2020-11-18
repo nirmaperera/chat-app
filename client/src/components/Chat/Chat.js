@@ -14,8 +14,8 @@ import TextContainer from '../TextContainer/TextContainer';
 import './Chat.css';
 import InputMenu from '../InputMenu/InputMenu';
 
-//const ENDPOINT = 'https://chat-application23.herokuapp.com/'
-const ENDPOINT = 'localhost:5000';
+const ENDPOINT = 'https://chat-application23.herokuapp.com/'
+//const ENDPOINT = 'localhost:5000';
 let socket;
 
 const Chat = ({ location }) => {
