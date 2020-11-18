@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import queryString from 'query-string';
 import io from 'socket.io-client';
+import { Link } from 'react-router-dom';
 
 import InfoBar from '../InforBar/InforBar';
+import errorImg from '../../images/error.png';
 
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 import TextContainer from '../TextContainer/TextContainer';
-import dots from '../../images/dots.png';
+
 
 import './Chat.css';
 import InputMenu from '../InputMenu/InputMenu';
@@ -22,6 +24,7 @@ const Chat = ({ location }) => {
     const [users, setUsers] = useState('');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
+    const [error, setError] = useState(false);
 
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
@@ -33,7 +36,9 @@ const Chat = ({ location }) => {
 
         socket.emit('join', { name, room }, (error) => {
             if (error) {
+                setError(true)
                 alert(error);
+
             }
         });
     }, [ENDPOINT, location.search]);
@@ -59,16 +64,27 @@ const Chat = ({ location }) => {
 
     return (
         <div className="outerContainer">
-            <TextContainer users={users} name={name} room={room} />
-            <div className="message__container">
-                <image src={dots} />
-                <div className="container">
-                    <InfoBar room={room} />
-                    <Messages messages={messages} name={name} />
-                    <InputMenu setMessage={setMessage} />
-                    <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+            {error ? <div className="error">
+                <div> <img src={errorImg}></img></div>
+                <Link to={"/"}>
+                    <button> Join TeleChat! </button>
+                </Link>
+
+
+            </div> :
+                <div className="innerContainer">
+                    <TextContainer users={users} name={name} room={room} />
+                    <div className="message__container">
+
+                        <div className="container">
+                            <InfoBar room={room} />
+                            <Messages messages={messages} name={name} />
+                            <InputMenu setMessage={setMessage} />
+                            <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+                        </div>
+                    </div>
                 </div>
-            </div>
+            }
 
         </div>
     );

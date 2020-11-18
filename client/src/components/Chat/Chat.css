@@ -6,6 +6,13 @@
     background-color: #f6f6f6;
   }
 
+  .innerContainer{
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+  }
+
   .message__container{
     width: 100%;
     flex: 1;
@@ -16,7 +23,6 @@
     display: flex;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('../../images/messageBg.png');
   }
 
   .container {
@@ -29,6 +35,39 @@
     height: 600px;
     width: 80%;
   }
+
+  .error{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .error > div> img {
+    height: 600px;
+  }
+
+  .error > a > button {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #0ba0c0;
+    padding: 15px;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    font-size: 15px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    box-shadow:inset -5px -11px 16px -2px #0ba0c0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.error >  a > button:hover{
+  background: #0990AC;
+  box-shadow:inset -5px -11px 16px -2px #088099;
+
+}
 
   @media (min-width: 320px) and (max-width: 480px) {
     .outerContainer {

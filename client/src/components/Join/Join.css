@@ -20,9 +20,15 @@ html, body {
     align-items: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('../../images/chat.jpg');
+    background-image: url('../../images/chat.png');
   }
 
+  .logo{
+    position: fixed;
+    display: flex;
+    top: 0;
+    margin-left: 10px;
+  }
   .joinInner_Container {
     width: 37%;
     background-color: #F5F5F5;
@@ -68,8 +74,8 @@ html, body {
   }
 
   .button:hover{
-    background: #6FAC49 ;
-    box-shadow:inset -5px -11px 16px -2px #ACD957;
+    background: #b7d957 ;
+    box-shadow:inset -5px -11px 16px -2px #6FAC49;
 
   }
 

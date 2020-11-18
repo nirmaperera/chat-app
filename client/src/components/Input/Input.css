@@ -12,6 +12,10 @@
     border-radius: 0 0px 5px 5px;
   }
 
+  input.message_input::placeholder{
+    color:#D0D0D0;
+  }
+
   input:focus, textarea:focus, select:focus{
     outline: none;
   }

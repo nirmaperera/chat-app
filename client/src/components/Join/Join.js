@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import blueBubble from '../../images/circle-b.png'
 import greenBubble from '../../images/circle-g.png'
+import logo from '../../images/logo.png';
 
 import './Join.css';
 
@@ -9,8 +10,11 @@ const Join = () => {
     const [name, setName] = useState('');
     const [room, setRoom] = useState("");
 
+
+
     return (
         <div className="joinOuter_Containter">
+            <div className="logo"><img src={logo} width="94px"></img></div>
             <div className="bubbles-left ">
                 <img className="blue-bubble floating" src={blueBubble}></img>
                 <img className="green-bubble floating delay" src={greenBubble}></img>
