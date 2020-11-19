@@ -14,8 +14,8 @@ import TextContainer from '../TextContainer/TextContainer';
 import './Chat.css';
 import InputMenu from '../InputMenu/InputMenu';
 
-//const ENDPOINT = 'https://chat-application23.herokuapp.com/'
-const ENDPOINT = 'localhost:5000';
+const ENDPOINT = 'https://chat-application23.herokuapp.com/'
+//const ENDPOINT = 'localhost:5000';
 let socket;
 
 const Chat = ({ location }) => {
@@ -25,7 +25,8 @@ const Chat = ({ location }) => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
     const [error, setError] = useState(false);
-    const [openMenu, setOpenMenu] = useState(true)
+    const [openMenu, setOpenMenu] = useState(false)
+    window.scrollTo(0, 0);
 
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
