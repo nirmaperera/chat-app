@@ -31,3 +31,9 @@
     color:#0ba0c0;
     cursor: pointer;
 }
+
+@media (max-width: 425px) {
+.sendButton{
+    width:30%;
+}
+}

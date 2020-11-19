@@ -32,7 +32,7 @@ const Gif = ({ setMessage, setClickGif, setClickStickers, library }) => {
                 library={library}
                 searchPlaceholder={placeholder}
                 masonryConfig={[
-                    { columns: 2, imageWidth: 110, gutter: 5 },
+                    { columns: 3, imageWidth: 110, gutter: 5 },
                     { mq: "700px", columns: 6, imageWidth: 120, gutter: 5 }
                 ]}
             />

@@ -15,7 +15,7 @@ const Message = ({ message: { user, text, time }, name }) => {
             <div className="message__Container fadeIn justify__end">
                 <p className="sent__Text pr-10">{trimName}</p>
                 <div className="message__BoxContainer">
-                    <div className="message__Box background__Blue">
+                    <div className="message__Box background__Blue bounceInUp">
                         {text.includes("data:image") ? <img width="400px" src={text} />
                             : text.includes("giphy.com/media") ? <img width="300px" src={text} />
                                 : <p className="message__Text color__white">{ReactEmoji.emojify(text)}</p>}
@@ -27,7 +27,7 @@ const Message = ({ message: { user, text, time }, name }) => {
         ) : (
                 <div className="message__Container fadeIn justify__start">
                     <div className="message__BoxContainer">
-                        <div className="message__Box">
+                        <div className="message__Box bounceInUp">
                             {text.includes("data:image") ? <img width="400px" src={text} />
                                 : text.includes("giphy.com/media") ? <img width="300px" src={text} />
                                     : <p className="message__Text color__Dark">{ReactEmoji.emojify(text)}</p>}

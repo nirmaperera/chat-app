@@ -133,17 +133,6 @@ html, body {
     width: 40px;
   }
 
-
-  @media (min-width: 320px) and (max-width: 480px) {
-    .joinOuterContainer {
-      height: 100%;
-    }
-
-    .joinInnerContainer {
-      width: 90%;
-    }
-  }
-
   button:focus {
     outline: 0;
   }
@@ -163,4 +152,43 @@ html, body {
 
 .delay{
   animation-duration: 4s;
+}
+
+
+@media screen and (max-width:425px){
+  .bubbles-right{
+    display: none;
+  }
+  .bubbles-bottom{
+    display: none
+  }
+  .bubbles-top{
+    margin-left: 0;
+  }
+  .es_listWrapper__4792f{
+    position: relative;
+    left: 50px;
+
+  }
+  .es_componentWrapper__1-bJI{
+    width:unset;
+
+  }
+  .joinInner_Container{
+    left: 0 !important;
+  }
+}
+
+/* tablet */
+@media screen and (max-width:768px){
+  .bubbles-right{
+    display: none;
+  }
+
+  .joinInner_Container{
+    position: relative;
+    z-index: 20000;
+    left: 50px;
+    width: 100%;
+  }
 }

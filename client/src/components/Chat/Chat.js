@@ -14,8 +14,8 @@ import TextContainer from '../TextContainer/TextContainer';
 import './Chat.css';
 import InputMenu from '../InputMenu/InputMenu';
 
-const ENDPOINT = 'https://chat-application23.herokuapp.com/'
-//const ENDPOINT = 'localhost:5000';
+//const ENDPOINT = 'https://chat-application23.herokuapp.com/'
+const ENDPOINT = 'localhost:5000';
 let socket;
 
 const Chat = ({ location }) => {
@@ -25,6 +25,7 @@ const Chat = ({ location }) => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
     const [error, setError] = useState(false);
+    const [openMenu, setOpenMenu] = useState(true)
 
     useEffect(() => {
         const { name, room } = queryString.parse(location.search);
@@ -62,6 +63,7 @@ const Chat = ({ location }) => {
         }
     }
 
+    console.log(openMenu, "OPen menu");
     return (
         <div className="outerContainer">
             {error ? <div className="error">
@@ -73,11 +75,12 @@ const Chat = ({ location }) => {
 
             </div> :
                 <div className="innerContainer">
-                    <TextContainer users={users} name={name} room={room} />
+
+                    <TextContainer users={users} name={name} room={room} setOpenMenu={setOpenMenu} menu={openMenu} />
                     <div className="message__container">
 
                         <div className="container">
-                            <InfoBar room={room} />
+                            <InfoBar room={room} setOpenMenu={setOpenMenu} menu={openMenu} />
                             <Messages messages={messages} name={name} />
                             <InputMenu setMessage={setMessage} />
                             <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />

@@ -10,12 +10,24 @@
     width: 100%;
 }
 
+.inforBar__menu{
+    cursor: pointer;
+}
+
+
+.inforBar__menu:hover{
+    color: #ACD957;
+}
+
+
   .inforBar-inner{
     flex: 0.5;
     display: flex;
     align-items: center;
     margin-left: 5%;
     color: white;
+    justify-content: space-between;
+    flex-direction: unset;
 }
 
 .InforBar-rightContainer {
@@ -39,5 +51,11 @@
     @keyframes blinker {
         50% {
           opacity: 0;
+        }
+    }
+
+    @media screen and (max-width:425px){
+        .inforBar__menu{
+            display: inline-block !important;
         }
     }

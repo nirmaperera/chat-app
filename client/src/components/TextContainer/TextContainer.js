@@ -4,16 +4,25 @@ import './TextContainer.css';
 import logo from '../../images/logo.png';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
+import ArrowBackOutlinedIcon from '@material-ui/icons/ArrowBackOutlined';
+import LastPageIcon from '@material-ui/icons/LastPage';
 
-const TextContainer = ({ users, name, room }) => {
+const TextContainer = ({ users, name, room, setOpenMenu, menu }) => {
     console.log(users, 'users', name, "name");
+    console.log(menu, "openMenu");
     return (
-        <div className="textContainer">
+        <div className={menu ? 'textContainer slide-right' : 'textContainer  slide-left'}>
             {
                 users
                     ? (
                         <div>
-                            <img src={logo} width="75px"></img>
+
+                            <div className="textContainer__menu">
+                                <img src={logo} width="75px"></img>
+                                <LastPageIcon className="textContainer__closeMenu" onClick={() => setOpenMenu(false)} />
+                            </div>
+
+
                             <h2 className="meeting__room"><MeetingRoomIcon /> Room: {room}</h2>
                             <h2 style={{
                                 marginLeft: "5%", marginBottom: "0", fontWeight: "200"

@@ -10,8 +10,6 @@ const Join = () => {
     const [name, setName] = useState('');
     const [room, setRoom] = useState("");
 
-
-
     return (
         <div className="joinOuter_Containter">
             <div className="logo"><img src={logo} width="94px"></img></div>
