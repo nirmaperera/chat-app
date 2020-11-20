@@ -25,7 +25,7 @@ const Chat = ({ location }) => {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
     const [error, setError] = useState(false);
-    const [openMenu, setOpenMenu] = useState(false)
+    const [openMenu, setOpenMenu] = useState(true)
     window.scrollTo(0, 0);
 
     useEffect(() => {

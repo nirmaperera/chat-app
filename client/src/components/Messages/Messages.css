@@ -3,3 +3,7 @@
     overflow: auto;
     flex: auto;
   }
+
+.messages > button{
+background-color: #ACD957 !important;
+}

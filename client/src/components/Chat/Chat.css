@@ -79,3 +79,7 @@
       height: 100%;
     }
   }
+
+  .react-scroll-to-bottom--css-fzznl-1n7m0yu::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}

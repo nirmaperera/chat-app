@@ -7,6 +7,8 @@
     max-width: 100%;
   }
 
+
+
   .message__Text {
     width: 100%;
     letter-spacing: 0;
@@ -101,5 +103,11 @@
   }
   100% {
      transform: translateY(0);
+  }
+}
+
+@media screen and (max-width:425px){
+  .message__Box > img{
+    width: 200px;
   }
 }

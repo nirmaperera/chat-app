@@ -4,7 +4,6 @@ import './TextContainer.css';
 import logo from '../../images/logo.png';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
-import ArrowBackOutlinedIcon from '@material-ui/icons/ArrowBackOutlined';
 import LastPageIcon from '@material-ui/icons/LastPage';
 
 const TextContainer = ({ users, name, room, setOpenMenu, menu }) => {
@@ -21,8 +20,6 @@ const TextContainer = ({ users, name, room, setOpenMenu, menu }) => {
                                 <img src={logo} width="75px"></img>
                                 <LastPageIcon className="textContainer__closeMenu" onClick={() => setOpenMenu(false)} />
                             </div>
-
-
                             <h2 className="meeting__room"><MeetingRoomIcon /> Room: {room}</h2>
                             <h2 style={{
                                 marginLeft: "5%", marginBottom: "0", fontWeight: "200"
@@ -31,8 +28,8 @@ const TextContainer = ({ users, name, room, setOpenMenu, menu }) => {
                                 <h2>
                                     {users.map(({ name }) => (
                                         <div key={name} className="activeItem">
-                                            {name}
                                             <FiberManualRecordIcon style={{ color: '#ACD957' }} />
+                                            {name}
                                         </div>
                                     ))}
                                 </h2>
