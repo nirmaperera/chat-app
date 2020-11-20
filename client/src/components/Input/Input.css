@@ -1,38 +1,44 @@
-.form {
-    display: flex;
-    border-top: 2px solid #D3D3D3;
-    height: 60px;
-  }
+.inputForm {
+	display: flex;
+	border-top: 2px solid #D3D3D3;
+	height: 60px;
+}
 
-  .message_input {
-    border: none;
-    border-radius: 0;
-    width: 100%;
-    font-size: 1.2em;
-    border-radius: 0 0px 5px 5px;
-  }
+.inputForm__input{
+	border: none;
+	border-radius: 0;
+	width: 100%;
+	font-size: 1.2em;
+	border-radius: 0 0px 5px 5px;
+}
 
-  input.message_input::placeholder{
-    color:#D0D0D0;
-  }
+input > .inputForm__input::placeholder{
+	color:#D0D0D0;
+}
 
-  input:focus, textarea:focus, select:focus{
-    outline: none;
-  }
+input:focus, textarea:focus, select:focus{
+	outline: none;
+}
 
-  .message_input::placeholder{
-    font-style: italic;
+.inputForm__input::placeholder{
+	font-style: italic;
+}
 
-  }
-  .sendButton {
-    color: #fff !important;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: #0ba0c0;
-    padding: 20px;
-    display: inline-block;
-    border: none;
-    width: 20%;
-    cursor: pointer;
-    border-radius: 0 0px 5px 5px;
-  }
+.inputForm__sendBtn {
+	color: #fff !important;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #0ba0c0;
+	padding: 20px;
+	display: inline-block;
+	border: none;
+	width: 20%;
+	cursor: pointer;
+	border-radius: 0 0px 5px 5px;
+}
+
+@media (max-width: 425px) {
+	.inputForm__sendBtn{
+		width:30%;
+	}
+}

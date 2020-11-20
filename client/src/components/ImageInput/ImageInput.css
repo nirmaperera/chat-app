@@ -1,22 +1,22 @@
-.image_input::-webkit-file-upload-button {
-    background-color:#0990AC;
-    border:none;
-    outline:none;
-    color:white;
-    padding:5px;
-    margin-left: 10px;
-    margin-bottom: 5px;
-    margin-right: 20px;
-    border-radius:10px;
-    cursor: pointer;
-    -webkit-appearance: none;
+.image__input{
+	border: none;
+	border-radius: 0;
+	padding-top:15px;
+	width: 100%;
+	font-size: 1.2em;
+	border-radius: 0 0px 5px 5px;
 }
 
-.image_input{
-    border: none;
-    border-radius: 0;
-    padding-top:15px;
-    width: 100%;
-    font-size: 1.2em;
-    border-radius: 0 0px 5px 5px;
+.image__input::-webkit-file-upload-button {
+	background-color:#0990AC;
+	border:none;
+	outline:none;
+	color:white;
+	padding:5px;
+	margin-left: 10px;
+	margin-bottom: 5px;
+	margin-right: 20px;
+	border-radius:10px;
+	cursor: pointer;
+	-webkit-appearance: none;
 }

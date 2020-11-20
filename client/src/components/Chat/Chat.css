@@ -1,85 +1,83 @@
-.outerContainer {
-    flex: 0.5;
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    background-color: #f6f6f6;
-  }
-
-  .innerContainer{
-    display: flex;
-    width: 100%;
-    height: 100%;
-
-  }
-
-  .message__container{
-    width: 100%;
-    flex: 1;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    display: flex;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  .container {
-    box-shadow: 0px 7px 15px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: #FFFFFF;
-    border-radius: 8px;
-    height: 600px;
-    width: 80%;
-  }
-
-  .error{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .error > div> img {
-    height: 600px;
-  }
-
-  .error > a > button {
-    color: #fff !important;
-    text-transform: uppercase;
-    text-decoration: none;
-    background: #0ba0c0;
-    padding: 15px;
-    border-radius: 5px;
-    display: inline-block;
-    border: none;
-    font-size: 15px;
-    letter-spacing: 2px;
-    cursor: pointer;
-    box-shadow:inset -5px -11px 16px -2px #0ba0c0;
-    font-family: 'Montserrat', sans-serif;
+.chat{
+	flex: 0.5;
+	display: flex;
+	align-items: center;
+	height: 100vh;
+	background-color: #f6f6f6;
 }
 
-.error >  a > button:hover{
-  background: #0990AC;
-  box-shadow:inset -5px -11px 16px -2px #088099;
+.chat__error{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
+.chat__error > div> img {
+	height: 600px;
+}
+
+.chat__error > a > button {
+	color: #fff !important;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #0ba0c0;
+	padding: 15px;
+	border-radius: 5px;
+	display: inline-block;
+	border: none;
+	font-size: 15px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	box-shadow:inset -5px -11px 16px -2px #0ba0c0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.chat__error >  a > button:hover{
+	background: #0990AC;
+	box-shadow:inset -5px -11px 16px -2px #088099;
+}
+
+.chatInner{
+	display: flex;
+	width: 100%;
+	height: 100%;
+}
+
+.chatInner__main{
+	width: 100%;
+	flex: 1;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	display: flex;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.chatInner__inner {
+	box-shadow: 0px 7px 15px rgba(0,0,0,0.2);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background: #FFFFFF;
+	border-radius: 8px;
+	height: 600px;
+	width: 80%;
 }
 
   @media (min-width: 320px) and (max-width: 480px) {
-    .outerContainer {
-      height: 100%;
-    }
+	.chat{
+	  height: 100%;
+	}
 
-    .container {
-      width: 100%;
-      height: 100%;
-    }
+	.chatInner__inner{
+	  width: 100%;
+	  height: 100%;
+	}
   }
 
-  .react-scroll-to-bottom--css-fzznl-1n7m0yu::-webkit-scrollbar {
-    display: none;  /* Safari and Chrome */
+.react-scroll-to-bottom--css-fzznl-1n7m0yu::-webkit-scrollbar {
+	display: none;  /* Safari and Chrome */
 }

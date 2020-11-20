@@ -1,61 +1,60 @@
 
 .inforBar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: rgb(87,217,178);
-    background: linear-gradient(180deg, rgba(87,217,178,1) 0%, rgba(34,193,195,0.6993172268907564) 14%, rgba(32,165,180,1) 100%, rgba(24,55,122,1) 100%);
-    border-radius: 4px 4px 0 0;
-    height: 60px;
-    width: 100%;
+ 	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: rgb(87,217,178);
+	background: linear-gradient(180deg, rgba(87,217,178,1) 0%, rgba(34,193,195,0.6993172268907564) 14%, rgba(32,165,180,1) 100%, rgba(24,55,122,1) 100%);
+	border-radius: 4px 4px 0 0;
+	height: 60px;
+	width: 100%;
 }
 
 .inforBar__menu{
-    cursor: pointer;
+	cursor: pointer;
 }
-
 
 .inforBar__menu:hover{
-    color: #ACD957;
+	color: #ACD957;
 }
 
-
-  .inforBar-inner{
-    flex: 0.5;
-    display: flex;
-    align-items: center;
-    margin-left: 5%;
-    color: white;
-    justify-content: space-between;
-    flex-direction: unset;
+.inforBar__inner{
+	flex: 0.5;
+	display: flex;
+	align-items: center;
+	margin-left: 5%;
+	color: white;
+	justify-content: space-between;
+	flex-direction: unset;
 }
 
-.InforBar-rightContainer {
-    display: flex;
-    flex: 0.5;
-    justify-content: flex-end;
-     margin-right: 5%;
+.InforBar__rightContainer {
+	display: flex;
+	flex: 0.5;
+	justify-content: flex-end;
+	margin-right: 5%;
 }
 
-    .InforBar-rightContainer > a,   .InforBar-rightContainer > a:visited{
-        color:white;
-    }
-    .onlineIcon {
-    margin-right: 5%;
-    }
+.InforBar__rightContainer > a,.InforBar__rightContainer > a:visited{
+	color:white;
+}
 
-    .blink{
-        animation: blinker 1.5s linear infinite;
-    }
+.inforBar-blink{
+	animation: blinker 1.5s linear infinite;
+}
 
-    @keyframes blinker {
-        50% {
-          opacity: 0;
-        }
-    }
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}
 
-    @media screen and (max-width:425px){
-        .inforBar__menu{
-            display: inline-block !important;
-        }
-    }
+@media screen and (max-width:425px){
+	.inforBar__menu{
+		display: inline-block !important;
+	}
+}
+
+.onlineIcon {
+	margin-right: 5%;
+}

@@ -1,113 +1,112 @@
 .message__Box {
-    background: #F3F3F3;
-    border-radius: 20px;
-    padding: 5px 20px;
-    color: white;
-    display: inline-block;
-    max-width: 100%;
-  }
+	background: #F3F3F3;
+	border-radius: 20px;
+	padding: 5px 20px;
+	color: white;
+	display: inline-block;
+	max-width: 100%;
+	}
 
-
-
-  .message__Text {
-    width: 100%;
-    letter-spacing: 0;
-    float: left;
-    font-size: 1.1em;
-    word-wrap: break-word;
-  }
-
-  .message__Text img {
-    vertical-align: middle;
-  }
-
-  .message__Container {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0 2%;
-    margin-top: 3px;
-  }
-
-  .sent__Text {
-    display: flex;
-    align-items: center;
-    font-family: Helvetica;
-    color: #828282;
-    letter-spacing: 0.3px;
-  }
-  .sent__Time{
-    display: flex;
-    justify-content: center;
-    color: #828282;
-    font-size: 10px;
-  }
-
-  .pl-10 {
-    padding-left: 10px;
-  }
-
-  .pr-10 {
-    padding-right: 10px;
-  }
-
-  .justify__start {
-    justify-content: flex-start;
-  }
-
-  .justify__end {
-    justify-content: flex-end;
-  }
-
-  .color__White {
-    color: white;
-  }
-
-  .color__Dark {
-    color: #353535;
-  }
-
-  .background__Blue {
-
-    background: rgb(34,193,195);
-    background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(24,55,122,1)  220%);}
-
-  .background__Light {
-    background: #F3F3F3;
-  }
-
-  .fadeIn {
-    -webkit-animation-name: fadeIn;
-    animation-name: fadeIn;
- }
-
- .bounceInUp {
-  animation: bounceInUp 1.5s forwards;
+.message__Text {
+	width: 100%;
+	letter-spacing: 0;
+	float: left;
+	font-size: 1.1em;
+	word-wrap: break-word;
 }
 
-  @keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
- }
+.message__Text img {
+	vertical-align: middle;
+}
+
+.message__Container {
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 2%;
+	margin-top: 3px;
+}
+
+.sent__Text {
+	display: flex;
+	align-items: center;
+	font-family: Helvetica;
+	color: #828282;
+	letter-spacing: 0.3px;
+}
+
+.sent__Time{
+	display: flex;
+	justify-content: center;
+	color: #828282;
+	font-size: 10px;
+}
+
+.pl-10 {
+	padding-left: 10px;
+}
+
+.pr-10 {
+	padding-right: 10px;
+}
+
+.justify__start {
+	justify-content: flex-start;
+}
+
+.justify__end {
+	justify-content: flex-end;
+}
+
+.color__White {
+	color: white;
+}
+
+.color__Dark {
+	color: #353535;
+}
+
+.background__Blue {
+	background: rgb(34,193,195);
+	background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(24,55,122,1)  220%);
+}
+
+.background__Light {
+	background: #F3F3F3;
+}
+
+.fadeIn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+
+.bounceInUp {
+	animation: bounceInUp 1.5s forwards;
+}
+
+@keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
 
  @keyframes bounceInUp {
-  0% {
-     opacity: 0;
-     transform: translateY(50px);
-  }
-  60% {
-     opacity: 1;
-     transform: translateY(-30px);
-  }
-  80% {
-     transform: translateY(10px);
-  }
-  100% {
-     transform: translateY(0);
-  }
+	0% {
+		 opacity: 0;
+		 transform: translateY(50px);
+	}
+	60% {
+		 opacity: 1;
+		 transform: translateY(-30px);
+	}
+	80% {
+		 transform: translateY(10px);
+	}
+	100% {
+		 transform: translateY(0);
+	}
 }
 
 @media screen and (max-width:425px){
-  .message__Box > img{
-    width: 200px;
-  }
+	.message__Box > img{
+		width: 200px;
+	}
 }
