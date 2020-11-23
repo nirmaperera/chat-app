@@ -1,9 +1,0 @@
-.messages {
-	padding: 5% 0;
-	overflow: auto;
-	flex: auto;
-}
-
-.messages > button{
-	background-color: #ACD957 !important;
-}

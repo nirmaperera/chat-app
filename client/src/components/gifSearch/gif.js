@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactGiphySearchbox from "react-giphy-searchbox";
 
-import './gifSearch.css';
+import './gifSearch.scss';
 
 const Gif = ({ setMessage, setClickGif, setClickStickers, library }) => {
 	const [gif, setGif] = useState("");

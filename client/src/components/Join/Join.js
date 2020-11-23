@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import blueBubble from '../../images/circle-b.png'
-import greenBubble from '../../images/circle-g.png'
-import logo from '../../images/logo.png';
+import blueBubble from '../../assets/images/circle-b.png'
+import greenBubble from '../../assets/images/circle-g.png'
+import logo from '../../assets/images/logo.png';
 
-import './Join.css';
+import './Join.scss';
 
 const Join = () => {
 	const [name, setName] = useState('');

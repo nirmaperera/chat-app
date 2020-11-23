@@ -1,0 +1,64 @@
+
+@import '../../assets/styles/styles.scss';
+
+.inforBar {
+	@include flex(row, space-between, center);
+	background: $cyan-green;
+	background: linear-gradient(180deg, rgba(87,217,178,1) 0%, rgba(34,193,195,0.6993172268907564) 14%, rgba(32,165,180,1) 100%, rgba(24,55,122,1) 100%);
+	border-radius: 4px 4px 0 0;
+	height: 60px;
+	width: 100%;
+
+	.inforBar__inner{
+		@include flex(row, space-between, center);
+		flex: 0.5;
+		margin-left: 5%;
+		color: white;
+	}
+
+	.inforBar__menu{
+		cursor: pointer;
+
+		&:hover{
+			color: $primary-green;
+		}
+	}
+
+	.inforBar-blink{
+		animation: blinker 1.5s linear infinite;
+	}
+
+}
+
+
+.InforBar__rightContainer {
+	@include flex(row, flex-end, unset);
+	flex: 0.5;
+	margin-right: 5%;
+
+	a{
+		color:white;
+
+		&:visited{
+			color:white;
+		}
+	}
+}
+
+.onlineIcon {
+	margin-right: 5%;
+}
+
+@keyframes blinker {
+	50% {
+		opacity: 0;
+	}
+}
+
+@media screen and (max-width:425px){
+	.inforBar__menu{
+		display: inline-block !important;
+	}
+}
+
+

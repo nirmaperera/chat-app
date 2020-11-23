@@ -5,9 +5,9 @@ import ImageSearchIcon from '@material-ui/icons/ImageSearch';
 import Gif from '../gifSearch/gif';
 import ImageInput from '../ImageInput/ImageInput';
 import CloseIcon from '@material-ui/icons/Close';
-import sticker from '../../images/sticker.png'
+import sticker from '../../assets/images/sticker.png'
 
-import './InputMenu.css';
+import './InputMenu.scss';
 
 const InputMenu = ({ setMessage }) => {
 	const [clickGif, setClickGif] = useState(false);

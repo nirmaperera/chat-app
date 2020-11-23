@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ImageInput.css';
+import './ImageInput.scss';
 
 const ImageInput = ({ setMessage, setClickImg }) => {
 	const [image, setImage] = useState("");

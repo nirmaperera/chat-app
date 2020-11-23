@@ -4,7 +4,7 @@ import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import MenuOutlinedIcon from '@material-ui/icons/MenuOutlined';
 
-import './InforBar.css';
+import './InforBar.scss';
 
 const InfoBar = ({ room, setOpenMenu, menu }) => {
 	return (

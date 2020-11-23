@@ -1,0 +1,13 @@
+
+@import '../../assets/styles/styles.scss';
+
+.messages {
+	padding: 5% 0;
+	overflow: auto;
+	flex: auto;
+
+	 button{
+		background-color: $primary-green !important;
+	}
+}
+

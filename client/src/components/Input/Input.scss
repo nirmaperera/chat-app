@@ -1,0 +1,48 @@
+
+@import '../../assets/styles/styles.scss';
+
+.inputForm {
+	display: flex;
+	border-top: 2px solid $light-grey;
+	height: 60px;
+
+	.inputForm__sendBtn {
+		color: #fff !important;
+		text-transform: uppercase;
+		text-decoration: none;
+		background: #0ba0c0;
+		padding: 20px;
+		display: inline-block;
+		border: none;
+		width: 20%;
+		cursor: pointer;
+		border-radius: 0 0px 5px 5px;
+
+		&:hover{
+			background-color: $primary-blue-dark;
+		}
+	}
+}
+
+.inputForm__input{
+	border: none;
+	border-radius: 0;
+	width: 100%;
+	font-size: 1.2em;
+	border-radius: 0 0px 5px 5px;
+
+	&::placeholder{
+		color:$light-grey;
+		font-style: italic;
+	}
+}
+
+input:focus, textarea:focus, select:focus{
+	outline: none;
+}
+
+@media (max-width: 425px) {
+	.inputForm__sendBtn{
+		width:30%;
+	}
+}

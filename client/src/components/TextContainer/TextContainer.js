@@ -1,12 +1,12 @@
 import React from 'react';
 
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
-import logo from '../../images/logo.png';
+import logo from '../../assets/images/logo.png';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
 import LastPageIcon from '@material-ui/icons/LastPage';
 
-import './TextContainer.css';
+import './TextContainer.scss';
 
 const TextContainer = ({ users, name, room, setOpenMenu, menu }) => {
 	return (
@@ -19,8 +19,7 @@ const TextContainer = ({ users, name, room, setOpenMenu, menu }) => {
 					</div>
 
 					<h2 className="textContainer__room"><MeetingRoomIcon /> Room: {room}</h2>
-					<h2 style={{ marginLeft: "5%", marginBottom: "0", fontWeight: "200" }}>
-						<PeopleAltIcon /> Online users:</h2>
+					<h2 className="textContainer__online"> <PeopleAltIcon /> Online users:</h2>
 
 					<div className="textContainer__active">
 						<h2>

@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import '../../assets/styles/styles.scss';
+
+.textContainer{
+	@include flex(column, space-between, unset);
+	flex: 0.35;
+	color: white;
+	height: 100%;
+	background: $primary-blue;
+	border-right: 5px solid $primary-green;
+
+	.textContainer__menu{
+		@include flex(row, space-between, center);
+	}
+
+	h1 {
+		margin-bottom: 0px;
+		padding-left: 5%;
+	}
+
+	.textContainer__online{
+		margin-left: 5%;
+		margin-bottom: 0;
+		margin-top: 20%;
+		font-weight: 200;
+	}
+}
+
+.textContainer__room{
+	margin-top: 20%;
+	background: $primary-blue-dark;
+	display: flex;
+	padding: 10px;
+	padding-right: 0;
+	border-radius: 10px 0px 0px 10px;
+	font-size: 1.3rem;
+	letter-spacing: 2px;
+	font-weight: 200;
+	border-bottom: 2px solid $cyan-green;
+}
+
+.textContainer__active{
+	@include flex(row, unset, center);
+	margin-bottom: 50%;
+	padding-left: 16%;
+
+	 h2{
+		width: 100%;
+		font-family: 'Montserrat', sans-serif;
+	}
+}
+
+.textContainer__activeItem{
+	background: $primary-blue-light;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 5%;
+	border-radius: 10px 0px 0px 10px;
+	font-size: 1.3rem;
+	border-bottom: 2px solid $cyan-green;
+	@include flex(row, unset, center);
+
+	img {
+		padding-left: 10px;
+	}
+}
+
+.slide-right{
+	animation: slideIn 1s forwards;
+}
+
+.slide-left{
+	animation-delay: 10s;
+	animation: slideOut 1s forwards;
+}
+
+.textContainer__closeMenu{
+	display: none !important;
+
+	&:hover{
+		color: $primary-green;
+	}
+}
+
+@media (max-width: 425px) {
+.textContainer {
+	width: 80% !important;
+	flex: unset;
+	position: absolute;
+	z-index: 2000;
+
+	.textContainer__closeMenu{
+		display: inline-block !important;
+		transform: rotate(180deg);
+		cursor: pointer;
+	  }
+  }
+}
+
+@keyframes slideIn {
+	0% {
+		transform: translateX(-500px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+@keyframes slideOut {
+	0% {
+		transform: translateX(0);
+  }
+	100% {
+		transform: translateX(-500px);
+	}
+}

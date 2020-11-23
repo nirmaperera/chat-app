@@ -1,0 +1,35 @@
+@import '../../assets/styles/styles.scss';
+
+.inputMenu{
+	background: #E8E8E8;
+
+	.inputMenu__inner{
+		background: #E8E8E8;
+		box-shadow: inset -6px -4px 16px 0px rgba(192,192,192,0.42);
+		width: 100%;
+		padding-top:10px;
+		padding-left: 10px;
+		padding-right: 10px;
+		@include flex(row, space-between, center);
+
+		.inputMenu__close{
+			color:$primary-blue;
+			cursor: pointer;
+		}
+	}
+}
+
+.inputMenu__icon{
+	font-size: 3rem !important;
+	background-color: $primary-blue;
+	border-radius: 20px;
+	padding: 10px;
+	color: white;
+	margin-right: 20px;
+	cursor: pointer;
+	border: 2px solid $primary-green;
+
+ 	&:hover{
+		background-color: $primary-blue-dark;
+	}
+}

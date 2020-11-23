@@ -1,0 +1,78 @@
+@import '../../assets/styles/styles.scss';
+
+.chat{
+	@include flex(row, unset, center);
+	flex: 0.5;
+	height: 100vh;
+	background-color: #f6f6f6;
+}
+
+.chatInner{
+	display: flex;
+	width: 100%;
+	height: 100%;
+
+	.chatInner__main{
+		width: 100%;
+		height: 100%;
+		@include flex(row, center, center);
+		flex: 1;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		.chatInner__inner {
+			box-shadow: 0px 7px 15px rgba(0,0,0,0.2);
+			@include flex(column, space-between, unset);
+			background: #FFFFFF;
+			border-radius: 8px;
+			height: 600px;
+			width: 80%;
+		}
+
+	}
+}
+
+.chat__error{
+	width: 100%;
+	@include flex(row, center, center);
+
+	div > img {
+		height: 600px;
+	}
+	a > button {
+		color: #fff !important;
+		text-transform: uppercase;
+		text-decoration: none;
+		background:$primary-blue;
+		padding: 15px;
+		border-radius: 5px;
+		display: inline-block;
+		border: none;
+		font-size: 15px;
+		letter-spacing: 2px;
+		cursor: pointer;
+		box-shadow:inset -5px -11px 16px -2px $primary-blue;
+		font-family: 'Montserrat', sans-serif;
+
+		&:hover{
+			background: $primary-blue;
+			box-shadow:inset -5px -11px 16px -2px $secondary-blue;
+		}
+	}
+}
+
+
+  @media (min-width: 320px) and (max-width: 480px) {
+	.chat{
+	  height: 100%;
+	}
+
+	.chatInner__inner{
+	  width: 100%;
+	  height: 100%;
+	}
+  }
+
+.react-scroll-to-bottom--css-fzznl-1n7m0yu::-webkit-scrollbar {
+	display: none;  /* Safari and Chrome */
+}
