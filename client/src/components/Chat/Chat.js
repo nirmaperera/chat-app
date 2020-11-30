@@ -57,13 +57,13 @@ const Chat = ({ location }) => {
 	const sendMessage = (event) => {
 		event.preventDefault();
 		console.log(message, 'MESSAGES')
+		const time = new Date().toLocaleTimeString();
 
 		if (message) {
-			socket.emit('sendMessage', message, () => setMessage(''));
+			socket.emit('sendMessage', message, time, () => setMessage(''));
 		}
 	}
 
-	console.log(openMenu, "Open menu");
 	return (
 		<div className="chat">
 			{error ? <div className="chat__error">

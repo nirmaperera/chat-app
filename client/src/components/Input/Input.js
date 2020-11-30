@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Input.scss';
 
-const Input = ({ setMessage, sendMessage, message, setTyping }) => {
+const Input = ({ setMessage, sendMessage, message }) => {
 	return (
 		<form className="inputForm">
 			<input
