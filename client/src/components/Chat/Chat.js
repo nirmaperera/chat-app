@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 
@@ -12,8 +12,8 @@ import TextContainer from '../TextContainer/TextContainer';
 import errorImg from '../../assets/images/error.png';
 import './Chat.scss';
 
-//const ENDPOINT = 'https://chat-application23.herokuapp.com/'
-const ENDPOINT = 'localhost:5000';
+const ENDPOINT = 'https://chat-application23.herokuapp.com/'
+//const ENDPOINT = 'localhost:5000';
 
 let socket;
 
@@ -26,11 +26,13 @@ const Chat = ({ location }) => {
 	const [error, setError] = useState(false);
 	const [openMenu, setOpenMenu] = useState(true)
 	window.scrollTo(0, 0);
+	const history = useHistory();
 
 	useEffect(() => {
 		const { name, room } = queryString.parse(location.search);
 
 		socket = io(ENDPOINT);
+		console.log(socket, 'SOCKET');
 
 		setRoom(room);
 		setName(name)
@@ -38,10 +40,15 @@ const Chat = ({ location }) => {
 		socket.emit('join', { name, room }, (error) => {
 			if (error) {
 				setError(true)
-				alert(error);
-
 			}
 		});
+
+		socket.on('connect_error', (error) => {
+			alert('Server is currently down :( Please come back later!');
+			socket.disconnect()
+			history.push('/')
+		});
+
 	}, [ENDPOINT, location.search]);
 
 	useEffect(() => {

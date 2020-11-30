@@ -19,6 +19,7 @@ io.on('connection', (socket) => { // a new connection
 
 		if (error) return callback(error); //if there errors then the function will stop
 
+
 		socket.join(user.room);
 
 		//admin messages
@@ -30,6 +31,8 @@ io.on('connection', (socket) => { // a new connection
 
 		callback(); // trigger a response after the socket is emitted, error handling
 	});
+
+
 
 	//user messages waiting on sendMessages from frontend
 	socket.on('sendMessage', (message, time, callback) => {
