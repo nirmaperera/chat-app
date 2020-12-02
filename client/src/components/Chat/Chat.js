@@ -8,7 +8,7 @@ import InputMenu from '../InputMenu/InputMenu';
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 import TextContainer from '../TextContainer/TextContainer';
-
+import DotLoader from "react-spinners/DotLoader";
 import errorImg from '../../assets/images/error.png';
 import './Chat.scss';
 
@@ -25,6 +25,7 @@ const Chat = ({ location }) => {
 	const [messages, setMessages] = useState([]);
 	const [error, setError] = useState(false);
 	const [openMenu, setOpenMenu] = useState(true)
+	const [loading, setLoading] = useState(true);
 	window.scrollTo(0, 0);
 	const history = useHistory();
 
@@ -33,6 +34,7 @@ const Chat = ({ location }) => {
 
 		socket = io(ENDPOINT);
 		console.log(socket, 'SOCKET');
+		setLoading(false);
 
 		setRoom(room);
 		setName(name)
@@ -73,25 +75,35 @@ const Chat = ({ location }) => {
 
 	return (
 		<div className="chat">
-			{error ? <div className="chat__error">
-				<div> <img src={errorImg} alt="error"></img></div>
-				<Link to={"/"}>
-					<button> Join TeleChat! </button>
-				</Link>
+			{loading ? <DotLoader
 
-			</div> :
-				<div className="chatInner">
-					<TextContainer users={users} name={name} room={room} setOpenMenu={setOpenMenu} menu={openMenu} />
-					<div className="chatInner__main">
-						<div className="chatInner__inner">
-							<InfoBar room={room} setOpenMenu={setOpenMenu} menu={openMenu} />
-							<Messages messages={messages} name={name} />
-							<InputMenu setMessage={setMessage} />
-							<Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+				size={150}
+				color={"#69D1D1"}
+				loading={loading}
+			/> :
+				<div style={{ width: "100%", height: "100%" }}>
+					{error ? <div className="chat__error">
+						<div> <img src={errorImg} alt="error"></img></div>
+						<Link to={"/"}>
+							<button> Join TeleChat! </button>
+						</Link>
+
+					</div> :
+						<div className="chatInner">
+							<TextContainer users={users} name={name} room={room} setOpenMenu={setOpenMenu} menu={openMenu} />
+							<div className="chatInner__main">
+								<div className="chatInner__inner">
+									<InfoBar room={room} setOpenMenu={setOpenMenu} menu={openMenu} />
+									<Messages messages={messages} name={name} />
+									<InputMenu setMessage={setMessage} />
+									<Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+								</div>
+							</div>
 						</div>
-					</div>
-				</div>
-			}
+					}
+
+				</div>}
+
 		</div>
 	);
 }

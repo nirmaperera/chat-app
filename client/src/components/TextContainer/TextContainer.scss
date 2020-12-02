@@ -11,6 +11,7 @@
 
 	.textContainer__menu{
 		@include flex(row, space-between, center);
+
 	}
 
 	h1 {
@@ -25,6 +26,7 @@
 		font-weight: 200;
 	}
 }
+
 
 .textContainer__room{
 	margin-top: 20%;
