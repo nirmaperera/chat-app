@@ -3,8 +3,6 @@
 
 .inforBar {
 	@include flex(row, space-between, center);
-	background: $cyan-green;
-	background: linear-gradient(180deg, rgba(87,217,178,1) 0%, rgba(34,193,195,0.6993172268907564) 14%, rgba(32,165,180,1) 100%, rgba(24,55,122,1) 100%);
 	border-radius: 4px 4px 0 0;
 	height: 60px;
 	width: 100%;
@@ -28,6 +26,17 @@
 		animation: blinker 1.5s linear infinite;
 	}
 
+}
+
+.inforBar__light{
+	background: $cyan-green;
+	background: linear-gradient(180deg, rgba(87,217,178,1) 0%, rgba(34,193,195,0.6993172268907564) 14%, rgba(32,165,180,1) 100%, rgba(24,55,122,1) 100%);
+
+}
+
+.inforBar__dark{
+	background: rgb(27,31,60);
+	background: linear-gradient(14deg, rgba(27,31,60,1) 0%, rgba(31,35,73,1) 35%, rgba(61,70,136,1) 100%);
 }
 
 

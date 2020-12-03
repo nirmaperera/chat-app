@@ -4,11 +4,19 @@
 	@include flex(row, unset, center);
 	flex: 0.5;
 	height: 100vh;
-	background-color: #f6f6f6;
 	.chat__loading{
 		font-family: 'Montserrat', sans-serif;
 		color:$primary-blue;
 	}
+}
+
+.chat__light{
+	background: #f6f6f6;
+
+}
+
+.chat__dark{
+	background: $dark-black-primary;
 }
 
 .chatInner{

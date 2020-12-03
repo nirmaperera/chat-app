@@ -7,13 +7,20 @@
 }
 
 .message__Box {
-	background: #F3F3F3;
 	border-radius: 20px;
 	padding: 5px 20px;
-	color: white;
 	display: inline-block;
 	max-width: 100%;
-	}
+	color: white;
+}
+
+.message__Box__light{
+	background: #F3F3F3;
+}
+
+.message__Box__dark{
+	background: $darkest-grey;
+}
 
 .message__Text {
 	width: 100%;
@@ -67,6 +74,11 @@
 .background__Blue {
 	background: $primary-blue;
 	background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(24,55,122,1)  220%);
+}
+
+.background__Blue_dark {
+	background:$dark-primary-blue;
+	background: linear-gradient(14deg, rgba(27,31,60,1) 0%, rgba(31,35,73,1) 35%, rgba(61,70,136,1) 100%);
 }
 
 .background__Light {

@@ -6,12 +6,11 @@
 	flex: 0.35;
 	color: white;
 	height: 100%;
-	background: $primary-blue;
 	border-right: 5px solid $primary-green;
 
 	.textContainer__menu{
 		@include flex(row, space-between, center);
-
+		margin:0 20px;
 	}
 
 	h1 {
@@ -27,10 +26,20 @@
 	}
 }
 
+.textContainer__inner{
+	height: 100%;
+}
+
+.textContainer__light{
+	background: $primary-blue;
+}
+
+.textContainer__dark{
+	background:$dark-primary-blue;
+}
 
 .textContainer__room{
 	margin-top: 20%;
-	background: $primary-blue-dark;
 	display: flex;
 	padding: 10px;
 	padding-right: 0;
@@ -39,6 +48,14 @@
 	letter-spacing: 2px;
 	font-weight: 200;
 	border-bottom: 2px solid $cyan-green;
+}
+
+.room__light{
+	background: $primary-blue-dark;
+}
+
+.room__dark{
+	background: $dark-primary-blue-dark;
 }
 
 .textContainer__active{
@@ -53,7 +70,6 @@
 }
 
 .textContainer__activeItem{
-	background: $primary-blue-light;
 	width: 100%;
 	padding: 10px;
 	margin-bottom: 5%;
@@ -65,6 +81,14 @@
 	img {
 		padding-left: 10px;
 	}
+}
+
+.active__dark{
+	background: $dark-primary-blue-light;
+}
+
+.active__light{
+	background: $primary-blue-light;
 }
 
 .slide-right{

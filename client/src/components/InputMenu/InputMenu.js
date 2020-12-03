@@ -9,7 +9,7 @@ import sticker from '../../assets/images/sticker.png'
 
 import './InputMenu.scss';
 
-const InputMenu = ({ setMessage }) => {
+const InputMenu = ({ setMessage, themeDark }) => {
 	const [clickGif, setClickGif] = useState(false);
 	const [clickImg, setClickImg] = useState(false);
 	const [clickStickers, setClickStickers] = useState(false);
@@ -33,12 +33,12 @@ const InputMenu = ({ setMessage }) => {
 	}
 
 	return (
-		<div className="inputMenu">
+		<div className={themeDark ? 'inputMenu inputMenu__dark' : 'inputMenu inputMenu__light'}>
 			<div className="inputMenu__inner">
 				<div>
-					<GifIcon onClick={() => gif()} className="inputMenu__icon" />
-					<ImageSearchIcon onClick={() => img()} className="inputMenu__icon" />
-					<img src={sticker} width='48px' className="inputMenu__icon" alt="stickers" onClick={() => stickers()} />
+					<GifIcon onClick={() => gif()} className={themeDark ? 'inputMenu__icon inputMenu__icon__dark' : 'inputMenu__icon inputMenu__icon__light'} />
+					<ImageSearchIcon onClick={() => img()} className={themeDark ? 'inputMenu__icon inputMenu__icon__dark' : 'inputMenu__icon inputMenu__icon__light'} />
+					<img src={sticker} width='48px' className={themeDark ? 'inputMenu__icon inputMenu__icon__dark' : 'inputMenu__icon inputMenu__icon__light'} alt="stickers" onClick={() => stickers()} />
 				</div>
 				<div>
 					{clickGif ? <CloseIcon className="inputMenu__close" onClick={() => setClickGif(false)} /> :
@@ -50,7 +50,7 @@ const InputMenu = ({ setMessage }) => {
 			<div>
 				{clickGif ? <Gif setMessage={setMessage} library={"gifs"} setClickGif={setClickGif} /> :
 					clickStickers ? <Gif setMessage={setMessage} library={"stickers"} setClickStickers={setClickStickers} /> :
-						clickImg ? <ImageInput setMessage={setMessage} setClickImg={setClickImg} /> : null}
+						clickImg ? <ImageInput setMessage={setMessage} setClickImg={setClickImg} themeDark={themeDark} /> : null}
 			</div>
 		</div>
 	)

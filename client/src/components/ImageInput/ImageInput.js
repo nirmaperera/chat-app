@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './ImageInput.scss';
 
-const ImageInput = ({ setMessage, setClickImg }) => {
+const ImageInput = ({ setMessage, setClickImg, themeDark }) => {
 	const [image, setImage] = useState("");
 
 	const onImageChange = (event) => {
@@ -19,7 +19,7 @@ const ImageInput = ({ setMessage, setClickImg }) => {
 	return (
 		<div>
 			<input
-				className="image__input"
+				className={themeDark ? 'image__input imageInput__dark' : 'image__input imageInput__light'}
 				type="file"
 				accept="image/*"
 				onChange={onImageChange}

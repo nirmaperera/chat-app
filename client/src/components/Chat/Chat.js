@@ -26,6 +26,8 @@ const Chat = ({ location }) => {
 	const [error, setError] = useState(false);
 	const [openMenu, setOpenMenu] = useState(true)
 	const [loading, setLoading] = useState(true);
+	const [themeDark, setThemeDark] = useState(false);
+
 	window.scrollTo(0, 0);
 	const history = useHistory();
 
@@ -75,7 +77,7 @@ const Chat = ({ location }) => {
 	}
 
 	return (
-		<div className="chat">
+		<div className={themeDark ? 'chat chat__dark' : 'chat chat__light'}>
 			{loading ?
 				<div style={{ margin: "0 auto" }}>
 					<DotLoader
@@ -95,19 +97,18 @@ const Chat = ({ location }) => {
 
 					</div> :
 						<div className="chatInner">
-							<TextContainer users={users} name={name} room={room} setOpenMenu={setOpenMenu} menu={openMenu} />
+							<TextContainer users={users} name={name} room={room} setOpenMenu={setOpenMenu} menu={openMenu} themeDark={themeDark} setThemeDark={setThemeDark} />
 							<div className="chatInner__main">
 								<div className="chatInner__inner">
-									<InfoBar room={room} setOpenMenu={setOpenMenu} menu={openMenu} />
-									<Messages messages={messages} name={name} />
-									<InputMenu setMessage={setMessage} />
-									<Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+									<InfoBar room={room} setOpenMenu={setOpenMenu} menu={openMenu} themeDark={themeDark} />
+									<Messages messages={messages} name={name} themeDark={themeDark} />
+									<InputMenu setMessage={setMessage} themeDark={themeDark} />
+									<Input message={message} setMessage={setMessage} sendMessage={sendMessage} themeDark={themeDark} />
 								</div>
 							</div>
 						</div>
 					}
 				</div>}
-
 		</div>
 	);
 }

@@ -11,26 +11,26 @@ import LastPageIcon from '@material-ui/icons/LastPage';
 
 import './TextContainer.scss';
 
-const TextContainer = ({ users, name, room, setOpenMenu, menu }) => {
-	const [themeDark, setThemeDark] = useState(false);
+const TextContainer = ({ users, name, room, setOpenMenu, menu, themeDark, setThemeDark }) => {
+
 	return (
 		<div className={menu ? 'textContainer slide-right' : 'textContainer  slide-left'}>
 			{users ? (
-				<div>
+				<div className={themeDark ? 'textContainer__inner textContainer__dark' : 'textContainer__inner textContainer__light'}>
 					<div className="textContainer__menu">
 						<img src={logo} alt="logo" width="75px"></img>
-						{/* {themeDark ? <Brightness7Icon style={{ transform: "rotate(180deg)" }} onClick={() => setThemeDark(false)} /> :
-							<Brightness2Icon className="textContainer_dark" onClick={() => setThemeDark(true)} />} */}
+						{themeDark ? <Brightness7Icon style={{ cursor: 'pointer' }} onClick={() => setThemeDark(false)} /> :
+							<Brightness2Icon style={{ transform: "rotate(180deg)", cursor: 'pointer' }} onClick={() => setThemeDark(true)} />}
 						<LastPageIcon className="textContainer__closeMenu" onClick={() => setOpenMenu(false)} />
 					</div>
 
-					<h2 className="textContainer__room"><MeetingRoomIcon /> Room: {room}</h2>
+					<h2 className={themeDark ? 'textContainer__room room__dark' : 'textContainer__room room__light'}><MeetingRoomIcon /> Room: {room}</h2>
 					<h2 className="textContainer__online"> <PeopleAltIcon /> Online users:</h2>
 
 					<div className="textContainer__active">
 						<h2>
 							{users.map(({ name }) => (
-								<div key={name} className="textContainer__activeItem">
+								<div key={name} className={themeDark ? 'textContainer__activeItem active__dark' : 'textContainer__activeItem active__light'}>
 									<FiberManualRecordIcon style={{ color: '#ACD957' }} />
 									{name}
 								</div>

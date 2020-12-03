@@ -1,4 +1,4 @@
-// colors
+// light colors
 $primary-green:#ACD957;
 $secondary-green:#6FAC49;
 $hover-green:#b7d957;
@@ -9,5 +9,16 @@ $primary-blue-light:#0990AC;
 
 $secondary-blue:#165C93;
 $light-grey:#D0D0D0;
-$dark-grey:#828282;
-$darkest-grey:#353535;
+
+//dark colors
+$dark-primary-blue:#1B1F3C;
+$dark-primary-blue-dark:#2C3160;
+$dark-primary-blue-light:#3B4383;
+$dark-black-primary:#1E1E1E;
+$dark-black-secondary:#262626;
+$dark-secondary-blue:#23284E;
+
+
+//mutal
+$dark-grey:#828282; //.inputMenu .inputMenu__inner
+$darkest-grey:#353535; //also for dark theme (.inputForm__input,)

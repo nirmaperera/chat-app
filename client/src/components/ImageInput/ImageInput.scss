@@ -9,7 +9,6 @@
 	border-radius: 0 0px 5px 5px;
 
 	&::-webkit-file-upload-button {
-		background-color:$primary-blue;
 		border:none;
 		outline:none;
 		color:white;
@@ -23,4 +22,14 @@
 	}
 }
 
+.imageInput__light{
+	&::-webkit-file-upload-button {
+		background-color:$primary-blue;
+	}
+}
 
+.imageInput__dark{
+	&::-webkit-file-upload-button {
+		background-color:$dark-primary-blue-light;
+	}
+}

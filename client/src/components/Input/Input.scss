@@ -10,17 +10,14 @@
 		color: #fff !important;
 		text-transform: uppercase;
 		text-decoration: none;
-		background: #0ba0c0;
 		padding: 20px;
 		display: inline-block;
 		border: none;
 		width: 20%;
 		cursor: pointer;
-		border-radius: 0 0px 5px 5px;
+		border-radius: 0 0px 5px 0px;
 
-		&:hover{
-			background-color: $primary-blue-dark;
-		}
+
 	}
 }
 
@@ -29,11 +26,35 @@
 	border-radius: 0;
 	width: 100%;
 	font-size: 1.2em;
-	border-radius: 0 0px 5px 5px;
+	border-radius: 0 0px 0px 5px;
 
 	&::placeholder{
 		color:$light-grey;
 		font-style: italic;
+		font-size: 0.9em;
+		letter-spacing: 1.5px;
+	}
+}
+
+.input__dark{
+	background: $darkest-grey;
+	color:white;
+
+}
+.input__dark:focus{
+	color:white;
+}
+
+.sendBtn__light{
+	background:$primary-blue;
+	&:hover{
+		background-color: $primary-blue-dark;
+	}
+}
+.sendBtn__dark{
+	background: $dark-primary-blue;
+	&:hover{
+		background: $dark-primary-blue-dark;
 	}
 }
 
@@ -46,3 +67,4 @@ input:focus, textarea:focus, select:focus{
 		width:30%;
 	}
 }
+
