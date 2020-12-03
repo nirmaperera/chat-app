@@ -32,8 +32,6 @@ io.on('connection', (socket) => { // a new connection
 		callback(); // trigger a response after the socket is emitted, error handling
 	});
 
-
-
 	//user messages waiting on sendMessages from frontend
 	socket.on('sendMessage', (message, time, callback) => {
 		const user = getUser(socket.id);

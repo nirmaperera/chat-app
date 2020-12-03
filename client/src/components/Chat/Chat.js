@@ -34,7 +34,7 @@ const Chat = ({ location }) => {
 
 		socket = io(ENDPOINT);
 		console.log(socket, 'SOCKET');
-		setLoading(false);
+
 
 		setRoom(room);
 		setName(name)
@@ -43,6 +43,7 @@ const Chat = ({ location }) => {
 			if (error) {
 				setError(true)
 			}
+			setLoading(false);
 		});
 
 		socket.on('connect_error', (error) => {
@@ -75,12 +76,16 @@ const Chat = ({ location }) => {
 
 	return (
 		<div className="chat">
-			{loading ? <DotLoader
-
-				size={150}
-				color={"#69D1D1"}
-				loading={loading}
-			/> :
+			{loading ?
+				<div style={{ margin: "0 auto" }}>
+					<DotLoader
+						size={150}
+						color={"#69D1D1"}
+						loading={loading}
+					/>
+					<p className="chat__loading">Setting up your chat room ... </p>
+				</div>
+				:
 				<div style={{ width: "100%", height: "100%" }}>
 					{error ? <div className="chat__error">
 						<div> <img src={errorImg} alt="error"></img></div>
@@ -101,7 +106,6 @@ const Chat = ({ location }) => {
 							</div>
 						</div>
 					}
-
 				</div>}
 
 		</div>
