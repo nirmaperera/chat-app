@@ -2,7 +2,7 @@
 Real time chat application made with React, Node, Express, Socket.io
 
 ## Live Demo:
-    [https://telechat.netlify.app]( https://telechat.netlify.app)
+[https://telechat.netlify.app](https://telechat.netlify.app)
 
 ## Available Scripts
 npm init
