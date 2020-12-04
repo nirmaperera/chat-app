@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import Brightness2Icon from '@material-ui/icons/Brightness2';

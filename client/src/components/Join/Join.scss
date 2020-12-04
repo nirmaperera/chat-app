@@ -151,14 +151,8 @@ html, body {
 }
 
 @media screen and (max-width:425px){
-	.bubblesRight{
+	.bubblesRight, .bubblesTop, .bubblesBottom, .bubblesLeft{
 		display: none;
-	}
-	.bubblesBottom{
-		display: none
-	}
-	.bubblesTop{
-		margin-left: 0;
 	}
 	.es_listWrapper__4792f{
 		position: relative;
@@ -179,6 +173,6 @@ html, body {
 		position: relative;
 		z-index: 20000;
 		left: 50px;
-		width: 100%;
+		width: 100% !important;
 	}
 }
