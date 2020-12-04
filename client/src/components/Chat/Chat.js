@@ -12,8 +12,8 @@ import DotLoader from "react-spinners/DotLoader";
 import errorImg from '../../assets/images/error.png';
 import './Chat.scss';
 
-//const ENDPOINT = 'https://chat-application23.herokuapp.com/'
-const ENDPOINT = 'localhost:5000';
+const ENDPOINT = 'https://chat-application23.herokuapp.com/'
+//const ENDPOINT = 'localhost:5000';
 
 let socket;
 
