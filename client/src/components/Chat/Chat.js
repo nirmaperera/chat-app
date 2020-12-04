@@ -37,7 +37,6 @@ const Chat = ({ location }) => {
 		socket = io(ENDPOINT);
 		console.log(socket, 'SOCKET');
 
-
 		setRoom(room);
 		setName(name)
 

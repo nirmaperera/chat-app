@@ -2,9 +2,10 @@
 Real time chat application made with React, Node, Express, Socket.io
 
 ## Live Demo:
-    https://telechat.netlify.app
+    [https://telechat.netlify.app]( https://telechat.netlify.app)
 
 ## Available Scripts
+npm init
 
 In the project directory, you can start the client by :
 ### `cd client`
@@ -21,6 +22,5 @@ In the project directory, you can run the server by :
 Runs the app in the development mode.\
 Open [http://localhost:5000](http://localhost:5000) to view it in the browser.
 
-Status: In Progress
 
 Illustrations by freellustrations.com
