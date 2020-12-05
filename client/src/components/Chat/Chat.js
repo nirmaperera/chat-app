@@ -67,7 +67,6 @@ const Chat = ({ location }) => {
 
 	const sendMessage = (event) => {
 		event.preventDefault();
-		console.log(message, 'MESSAGES')
 		const time = new Date().toLocaleTimeString();
 
 		if (message) {

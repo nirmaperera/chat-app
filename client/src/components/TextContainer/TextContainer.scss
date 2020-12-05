@@ -31,11 +31,11 @@
 }
 
 .textContainer__light{
-	background: $primary-blue;
+	background: linear-gradient(167deg, rgba(11,160,192,1) 56%, rgba(87,217,178,0.9430147058823529) 100%);
 }
 
 .textContainer__dark{
-	background:$dark-primary-blue;
+	background: linear-gradient(158deg, rgba(27,31,60,1) 0%, rgba(31,35,73,1) 35%, rgba(61,70,136,1) 100%);
 }
 
 .textContainer__room{
