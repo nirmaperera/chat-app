@@ -19,7 +19,7 @@
 }
 
 .message__Box__dark{
-	background: $darkest-grey;
+	background: #35363A;
 }
 
 .message__Text {
@@ -44,7 +44,7 @@
 .sent__Time{
 	@include flex(row, center, unset);
 	color: $dark-grey;
-	font-size: 10px;
+	font-size: 11px;
 }
 
 .pl-10 {
