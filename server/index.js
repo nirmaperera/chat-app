@@ -19,7 +19,6 @@ io.on('connection', (socket) => { // a new connection
 
 		if (error) return callback(error); //if there errors then the function will stop
 
-
 		socket.join(user.room);
 
 		//admin messages
@@ -27,10 +26,23 @@ io.on('connection', (socket) => { // a new connection
 		socket.emit('message', { user: 'Admin', text: `🎊 ${user.name}, welcome to room ${user.room} 🎊` });
 		socket.broadcast.to(user.room).emit('message', { user: 'Admin', text: `${user.name} has joined!` });
 
+
 		io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room) });
 
 		callback(); // trigger a response after the socket is emitted, error handling
 	});
+
+	// when the client emits 'typing', broadcast typing it to others users
+	socket.on('typing', (name, typing, callback) => {
+		if (typing === true) {
+			socket.broadcast.emit('typing', { data: `${name} is typing ... ` });
+		} else {
+			socket.broadcast.emit('typing', { data: ` ` });
+		}
+		callback();
+
+	});
+
 
 	//user messages waiting on sendMessages from frontend
 	socket.on('sendMessage', (message, time, callback) => {

@@ -27,6 +27,8 @@ const Chat = ({ location }) => {
 	const [openMenu, setOpenMenu] = useState(true)
 	const [loading, setLoading] = useState(true);
 	const [themeDark, setThemeDark] = useState(false);
+	const [typing, setTyping] = useState(false);
+	const [typeMess, setTypeMess] = useState('');
 
 	window.scrollTo(0, 0);
 	const history = useHistory();
@@ -47,6 +49,10 @@ const Chat = ({ location }) => {
 			setLoading(false);
 		});
 
+		if (typing) {
+			socket.emit('typing', name);
+		}
+
 		socket.on('connect_error', (error) => {
 			alert('Server is currently down :( Please come back later!');
 			socket.disconnect()
@@ -64,6 +70,17 @@ const Chat = ({ location }) => {
 			setUsers(users);
 		});
 	}, []);
+
+	useEffect(() => {
+		socket.on('typing', typeMess => {
+			setTypeMess(typeMess.data);
+		});
+
+	}, [name, typeMess])
+
+	const isTyping = (typing) => {
+		socket.emit('typing', name, typing, () => setTypeMess(''))
+	}
 
 	const sendMessage = (event) => {
 		event.preventDefault();
@@ -100,8 +117,11 @@ const Chat = ({ location }) => {
 								<div className="chatInner__inner">
 									<InfoBar room={room} setOpenMenu={setOpenMenu} menu={openMenu} themeDark={themeDark} />
 									<Messages messages={messages} name={name} themeDark={themeDark} />
+									{typeMess ? <p className={themeDark ? "chatInner__typing dark__typing" : "chatInner__typing light__typing"}>{typeMess}</p> : null}
+
 									<InputMenu setMessage={setMessage} themeDark={themeDark} />
-									<Input message={message} setMessage={setMessage} sendMessage={sendMessage} themeDark={themeDark} />
+									<Input message={message} setMessage={setMessage} sendMessage={sendMessage} themeDark={themeDark} setTyping={setTyping} isTyping={isTyping} />
+
 								</div>
 							</div>
 						</div>

@@ -3,7 +3,6 @@
 
 .inputForm {
 	display: flex;
-	border-top: 2px solid $light-grey;
 	height: 60px;
 
 	.inputForm__sendBtn {
@@ -16,8 +15,6 @@
 		width: 20%;
 		cursor: pointer;
 		border-radius: 0 0px 5px 0px;
-
-
 	}
 }
 

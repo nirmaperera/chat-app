@@ -12,11 +12,19 @@
 
 .chat__light{
 	background: #f6f6f6;
-
 }
 
 .chat__dark{
 	background: $dark-black-primary;
+}
+
+.dark__typing{
+    background: $dark-black-secondary;
+	color:#5761b3
+}
+
+.light__typing{
+	color: $primary-blue;
 }
 
 .chatInner{
@@ -39,10 +47,20 @@
 			border-radius: 8px;
 			height: 600px;
 			width: 80%;
+
+			.chatInner__typing{
+				font-style: italic;
+				margin:0;
+				padding-top: 20px;
+				padding-bottom: 10px;
+				letter-spacing: 1.3px;
+			}
 		}
 
 	}
 }
+
+
 
 .chat__error{
 	width: 100%;

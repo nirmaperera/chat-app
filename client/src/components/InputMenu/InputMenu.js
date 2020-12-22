@@ -31,6 +31,7 @@ const InputMenu = ({ setMessage, themeDark }) => {
 
 	return (
 		<div className={themeDark ? 'inputMenu inputMenu__dark' : 'inputMenu inputMenu__light'}>
+
 			<div className="inputMenu__inner">
 				<div>
 					<GifIcon onClick={() => handleInputs('gif')} className={themeDark ? 'inputMenu__icon inputMenu__icon__dark' : 'inputMenu__icon inputMenu__icon__light'} />
