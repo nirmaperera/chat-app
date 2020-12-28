@@ -4,12 +4,20 @@ import { Link } from 'react-router-dom';
 import blueBubble from '../../assets/images/circle-b.png'
 import greenBubble from '../../assets/images/circle-g.png'
 import logo from '../../assets/images/logo.png';
+import FileCopyOutlinedIcon from '@material-ui/icons/FileCopyOutlined';
+import CheckOutlinedIcon from '@material-ui/icons/CheckOutlined';
 
 import './Join.scss';
 
 const Join = () => {
 	const [name, setName] = useState('');
 	const [room, setRoom] = useState("");
+	const [copy, setCopy] = useState(false);
+
+	const handleCopy = () => {
+		navigator.clipboard.writeText(room);
+		setCopy(true);
+	}
 
 	return (
 		<div className="join">
@@ -21,8 +29,13 @@ const Join = () => {
 
 			<div className="joinInner">
 				<h1 className="joinInner__heading"> Join </h1>
-				<div><input placeholder="Name" className="joinInner__input" type="text" onChange={(e) => setName(e.target.value)}></input></div>
-				<div><input placeholder="Room" className="joinInner__input mg-20" type="text" onChange={(e) => setRoom(e.target.value)}></input></div>
+				<div className="joinInner__input"><input placeholder="Name" type="text" onChange={(e) => setName(e.target.value)}></input></div>
+				<div className="joinInner__input">
+					<input placeholder="Room" type="text" onChange={(e) => setRoom(e.target.value)}></input>
+					{room && !copy ? <FileCopyOutlinedIcon onClick={handleCopy} />
+						: room && copy ? <CheckOutlinedIcon />
+							: null}
+				</div>
 
 				<Link onClick={e => (!name || !room) ? e.preventDefault() : null} to={`/chat/?name=${name}&room=${room}`}>
 					<button className="joinInner__btn mg-20" type="submit">Join</button>

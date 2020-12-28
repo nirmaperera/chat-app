@@ -30,7 +30,6 @@ const Chat = ({ location }) => {
 	const [typing, setTyping] = useState(false);
 	const [typeMess, setTypeMess] = useState('');
 
-	window.scrollTo(0, 0);
 	const history = useHistory();
 
 	useEffect(() => {
