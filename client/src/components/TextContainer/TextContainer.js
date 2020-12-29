@@ -10,7 +10,8 @@ import LastPageIcon from '@material-ui/icons/LastPage';
 
 import './TextContainer.scss';
 
-const TextContainer = ({ users, name, room, setOpenMenu, menu, themeDark, setThemeDark }) => {
+const TextContainer = ({ users, userName, room, setOpenMenu, menu, themeDark, setThemeDark }) => {
+
 	return (
 		<div className={menu ? 'textContainer slide-right' : 'textContainer  slide-left'}>
 			{users ? (
@@ -30,7 +31,7 @@ const TextContainer = ({ users, name, room, setOpenMenu, menu, themeDark, setThe
 							{users.map(({ name }) => (
 								<div key={name} className={themeDark ? 'textContainer__activeItem active__dark' : 'textContainer__activeItem active__light'}>
 									<FiberManualRecordIcon style={{ color: '#ACD957' }} />
-									{name}
+									{name === userName ? <span>{name} <i style={{ fontSize: '0.6em' }}>(you)</i> </span> : name}
 								</div>
 							))}
 						</h2>
