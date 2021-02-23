@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { ChatContext } from '../../chatContext';
 
 import Gif from '../gifSearch/gif';
 import ImageInput from '../ImageInput/ImageInput';
@@ -10,10 +11,12 @@ import sticker from '../../assets/images/sticker.png'
 
 import './InputMenu.scss';
 
-const InputMenu = ({ setMessage, themeDark }) => {
+const InputMenu = () => {
 	const [clickGif, setClickGif] = useState(false);
 	const [clickImg, setClickImg] = useState(false);
 	const [clickStickers, setClickStickers] = useState(false);
+	const { theme } = useContext(ChatContext);
+	const [themeDark] = theme;
 
 	const handleInputs = (input) => {
 		if (input === 'gif') {
@@ -44,9 +47,9 @@ const InputMenu = ({ setMessage, themeDark }) => {
 			</div>
 
 			<div>
-				{clickGif ? <Gif setMessage={setMessage} library={"gifs"} setClickGif={setClickGif} /> :
-					clickStickers ? <Gif setMessage={setMessage} library={"stickers"} setClickStickers={setClickStickers} /> :
-						clickImg ? <ImageInput setMessage={setMessage} setClickImg={setClickImg} themeDark={themeDark} /> : null}
+				{clickGif ? <Gif library={"gifs"} setClickGif={setClickGif} /> :
+					clickStickers ? <Gif library={"stickers"} setClickStickers={setClickStickers} /> :
+						clickImg ? <ImageInput setClickImg={setClickImg} /> : null}
 			</div>
 		</div>
 	)

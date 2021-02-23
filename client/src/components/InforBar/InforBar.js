@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ChatContext } from '../../chatContext';
 
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
@@ -6,7 +7,10 @@ import MenuOutlinedIcon from '@material-ui/icons/MenuOutlined';
 
 import './InforBar.scss';
 
-const InfoBar = ({ room, setOpenMenu, menu, themeDark }) => {
+const InfoBar = ({ room, setOpenMenu, menu }) => {
+	const { theme } = useContext(ChatContext);
+	const [themeDark] = theme;
+
 	return (
 		<div className={themeDark ? 'inforBar inforBar__dark' : 'inforBar inforBar__light'}>
 			<div className="inforBar__inner">

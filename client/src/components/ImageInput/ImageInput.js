@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { ChatContext } from '../../chatContext';
+
 import './ImageInput.scss';
 
-const ImageInput = ({ setMessage, setClickImg, themeDark }) => {
-	const [image, setImage] = useState("");
+const ImageInput = ({ setClickImg }) => {
+	const { theme, Message } = useContext(ChatContext);
+	const [themeDark] = theme;
+	const [message, setMessage] = Message;
 
 	const onImageChange = (event) => {
 		if (event.target.files && event.target.files[0]) {
 			let reader = new FileReader();
 			reader.onload = (e) => {
-				setImage(e.target.result)
 				setMessage(e.target.result);
 				setClickImg(false);
 			};

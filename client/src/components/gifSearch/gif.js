@@ -1,24 +1,22 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { ChatContext } from '../../chatContext';
 import ReactGiphySearchbox from "react-giphy-searchbox";
 
 import './gifSearch.scss';
 
-const Gif = ({ setMessage, setClickGif, setClickStickers, library }) => {
-	const [gif, setGif] = useState("");
-	const [stickers, setStickers] = useState("");
+const Gif = ({ setClickGif, setClickStickers, library }) => {
+	const { Message } = useContext(ChatContext);
+	const [message, setMessage] = Message;
 
 	const selectMedia = (item) => {
 		console.log(item);
 		if (library === 'stickers') {
-			setStickers(item.images.original.url)
 			setMessage(item.images.original.url)
 			setClickStickers(false);
 		}
 		else {
-			setGif(item.images.original.url)
 			setMessage(item.images.original.url)
 			setClickGif(false)
-
 		}
 	}
 

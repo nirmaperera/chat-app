@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { ChatContext } from '../../chatContext';
+
 import queryString from 'query-string';
 import io from 'socket.io-client';
 
@@ -7,13 +9,14 @@ import InfoBar from '../InforBar/InforBar';
 import InputMenu from '../InputMenu/InputMenu';
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
-import TextContainer from '../TextContainer/TextContainer';
+import MenuContainer from '../MenuContainer/MenuContainer';
 import DotLoader from "react-spinners/DotLoader";
 import errorImg from '../../assets/images/error.png';
+
 import './Chat.scss';
 
 //const ENDPOINT = 'https://chat-application23.herokuapp.com/'
-const ENDPOINT = 'localhost:5000';
+const ENDPOINT = 'localhost:5000';// for testing purpuses
 
 let socket;
 
@@ -91,42 +94,45 @@ const Chat = ({ location }) => {
 	}
 
 	return (
-		<div className={themeDark ? 'chat chat__dark' : 'chat chat__light'}>
-			{loading ?
-				<div style={{ margin: "0 auto" }}>
-					<DotLoader
-						size={150}
-						color={"#69D1D1"}
-						loading={loading}
-					/>
-					<p className="chat__loading">Setting up your chat room ... </p>
-				</div>
-				:
-				<div style={{ width: "100%", height: "100%" }}>
-					{error ? <div className="chat__error">
-						<div> <img src={errorImg} alt="error"></img></div>
-						<Link to={"/"}>
-							<button> Join TeleChat! </button>
-						</Link>
+		<ChatContext.Provider value={{ theme: [themeDark, setThemeDark], Message: [message, setMessage], Name: [name, setName] }}>
+			<div className={themeDark ? 'chat chat__dark' : 'chat chat__light'}>
+				{loading ?
+					<div style={{ margin: "0 auto" }}>
+						<DotLoader
+							size={150}
+							color={"#69D1D1"}
+							loading={loading}
+						/>
+						<p className="chat__loading">Setting up your chat room ... </p>
+					</div>
+					:
+					<div style={{ width: "100%", height: "100%" }}>
+						{error ? <div className="chat__error">
+							<div> <img src={errorImg} alt="error"></img></div>
+							<Link to={"/"}>
+								<button> Join TeleChat! </button>
+							</Link>
 
-					</div> :
-						<div className="chatInner">
-							<TextContainer users={users} userName={name} room={room} setOpenMenu={setOpenMenu} menu={openMenu} themeDark={themeDark} setThemeDark={setThemeDark} />
-							<div className="chatInner__main">
-								<div className="chatInner__inner">
-									<InfoBar room={room} setOpenMenu={setOpenMenu} menu={openMenu} themeDark={themeDark} />
-									<Messages messages={messages} name={name} themeDark={themeDark} />
-									{typeMess ? <p className={themeDark ? "chatInner__typing dark__typing" : "chatInner__typing light__typing"}>{typeMess}</p> : null}
+						</div> :
+							<div className="chatInner">
+								<MenuContainer users={users} userName={name} room={room} setOpenMenu={setOpenMenu} menu={openMenu} />
+								<div className="chatInner__main">
+									<div className="chatInner__inner">
+										<InfoBar room={room} setOpenMenu={setOpenMenu} menu={openMenu} />
+										<Messages messages={messages} />
+										{typeMess ? <p className={themeDark ? "chatInner__typing dark__typing" :
+											"chatInner__typing light__typing"}>{typeMess}</p>
+											: null}
 
-									<InputMenu setMessage={setMessage} themeDark={themeDark} />
-									<Input message={message} setMessage={setMessage} sendMessage={sendMessage} themeDark={themeDark} setTyping={setTyping} isTyping={isTyping} />
-
+										<InputMenu />
+										<Input sendMessage={sendMessage} setTyping={setTyping} isTyping={isTyping} />
+									</div>
 								</div>
 							</div>
-						</div>
-					}
-				</div>}
-		</div>
+						}
+					</div>}
+			</div>
+		</ChatContext.Provider>
 	);
 }
 

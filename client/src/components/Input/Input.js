@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ChatContext } from '../../chatContext';
 
 import './Input.scss';
 
-const Input = ({ setMessage, sendMessage, message, themeDark, setTyping, isTyping }) => {
+const Input = ({ sendMessage, setTyping, isTyping }) => {
 	let timer, timeoutVal = 2000;
+	const { theme, Message } = useContext(ChatContext);
+	const [themeDark] = theme;
+	const [message, setMessage] = Message;
+
 	const handleKeyPress = (e) => {
 		if (e.key === 'Enter') {
 			sendMessage(e)
